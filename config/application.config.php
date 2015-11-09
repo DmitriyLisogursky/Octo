@@ -1,5 +1,4 @@
-<?php
-return array(
+<?php return array(
     // This should be an array of module namespaces used in the application.
     'modules' => array(
         'Application',
@@ -58,7 +57,7 @@ return array(
     //     ),
     // )
 
-   // Initial configuration with which to seed the ServiceManager.
-   // Should be compatible with Zend\ServiceManager\Config.
-   // 'service_manager' => array(),
+    // Initial configuration with which to seed the ServiceManager.
+    // Should be compatible with Zend\ServiceManager\Config.
+    // 'service_manager' => array(),
 );
