@@ -1,0 +1,13 @@
+url=jdbc:mysql://localhost/octodb
+
+username=root
+
+password=
+ 
+driver=com.mysql.jdbc.Driver
+
+classpath=lib/mysql-connector-java-5.1.34-bin.jar
+
+changeLogFile=changelog/changelog-master.xml
+
+outputFile=output.sql

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="init_user_record" author="Oleksii Volkov">
+        <sql>
+            INSERT INTO tbl_octo_users(
+            login, password, passwordSalt, firstName,
+            middleName, lastName, email, status
+            )
+            VALUES (
+            'Admin.Admin', '296d1bd60bf9beb0faf4c5edd7a09171', 'hM*l[@,Qqq>fy-uAnhX]~oYPHy_9T1', 'First',
+            'Middle', 'Last', 'admin@admin.com', 'confirmed'
+            )
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

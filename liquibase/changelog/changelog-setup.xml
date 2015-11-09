@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="Oleksii Volkov" id="create_tag">
+        <tagDatabase tag="version_1.0"/>
+    </changeSet>
+
+    <changeSet author="Oleksii Volkov" id="create_users">
+        <createTable tableName="tbl_octo_users">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="login" type="varchar(150)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="password" type="varchar(150)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="passwordSalt" type="varchar(150)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="firstName" type="varchar(150)"/>
+            <column name="middleName" type="varchar(150)"/>
+            <column name="lastName" type="varchar(150)"/>
+            <column name="email" type="varchar(150)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="status" type="varchar(20)" defaultValue="not_confirmed"/>
+            <column name="regDate" type="timestamp" defaultValueDate="current_timestamp"/>
+            <column name="modifiedDate" type="timestamp" defaultValueDate="current_timestamp"/>
+            <column name="loginAttempts" type="smallint" defaultValueNumeric="0"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
