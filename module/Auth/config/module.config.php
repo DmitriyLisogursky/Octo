@@ -15,7 +15,8 @@ return array(
                     'route' => '/login',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Auth\Controller',
-                        'controller' => 'LoginRest',
+                        'controller' => 'Login',
+                        'action' => 'login'
                     ),
                 ),
             ),
@@ -43,7 +44,8 @@ return array(
     ),
     'controllers' => array(
         'factories' => array(
-            'Auth\Controller\LoginRest' => 'Auth\Factory\LoginRestControllerFactory'
+            'Auth\Controller\Login' => 'Auth\Factory\LoginControllerFactory',
+            'Auth\Controller\LoginRest' => 'Auth\Factory\LoginRestControllerFactory',
         ),
     ),
     'view_manager' => array(

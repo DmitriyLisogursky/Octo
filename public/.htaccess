@@ -1,3 +1,7 @@
+<Limit GET POST PUT DELETE>
+  Allow from all
+</Limit>
+
 RewriteEngine On
 # The following rule tells Apache that if the requested filename
 # exists, simply serve it.
