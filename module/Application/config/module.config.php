@@ -52,6 +52,10 @@ return array(
         ),
     ),
     'service_manager' => array(
+        'factories' => array(
+            'Zend\Cache' => 'Zend\Cache\Service\StorageCacheFactory',
+            'CacheListener' => 'Application\Service\Factory\CacheListenerFactory',
+        ),
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
@@ -82,10 +86,7 @@ return array(
         'not_found_template' => 'error/404',
         'exception_template' => 'error/index',
         'template_map' => array(
-            'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
-            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
-            'error/404' => __DIR__ . '/../view/error/404.phtml',
-            'error/index' => __DIR__ . '/../view/error/index.phtml',
+            'template_map' => include __DIR__ . '/../template_map.php',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
