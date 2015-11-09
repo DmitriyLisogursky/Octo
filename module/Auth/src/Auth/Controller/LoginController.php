@@ -9,16 +9,17 @@
 namespace Auth\Controller;
 
 
-use Zend\Mvc\Controller\AbstractActionController;
+use Application\Controller\CommonController;
 use Zend\View\Model\ViewModel;
 
-class LoginController extends AbstractActionController{
+class LoginController extends CommonController {
 
     public function __construct() {
 
     }
 
     public function loginAction() {
+
         return new ViewModel();
     }
 }
