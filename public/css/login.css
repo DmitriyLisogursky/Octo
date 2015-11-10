@@ -1,16 +1,8 @@
 @CHARSET "UTF-8";
-/*
-over-ride "Weak" message, show font in dark grey
-*/
 
 .progress-bar {
     color: #333;
 }
-
-/*
-Reference:
-http://www.bootstrapzen.com/item/135/simple-login-form-logo/
-*/
 
 * {
     -webkit-box-sizing: border-box;
@@ -26,12 +18,8 @@ http://www.bootstrapzen.com/item/135/simple-login-form-logo/
     padding: 10px;
 }
 
-body {
-    background: #f1ede8 url(/img/background.png) repeat scroll 0 0;
-}
-
 .login-form {
-    margin-top: 50%;
+    margin-top: 45%;
 }
 
 form[role=login] {
@@ -45,8 +33,7 @@ form[role=login] {
 
 form[role=login] img {
     display: block;
-    margin: 0 auto;
-    margin-bottom: 35px;
+    margin: 0 auto 35px;
 }
 
 form[role=login] input,

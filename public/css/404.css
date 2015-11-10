@@ -1,0 +1,10 @@
+.greeting {
+    margin: 0 auto;
+    padding-top: 135px;
+    font: 20px Arial, sans-serif;
+    text-align: center;
+}
+
+.greeting img {
+    margin: 20px auto 20px;
+}

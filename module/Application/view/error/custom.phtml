@@ -11,21 +11,29 @@
 
     <!-- Le styles -->
     <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => '/img/octo-small-logo.png'))
+        ->prependStylesheet('/css/404.css')
         ->prependStylesheet('/css/style.css')
         ->prependStylesheet('/css/bootstrap-theme.min.css')
         ->prependStylesheet('/css/bootstrap.min.css') ?>
 
-    <!-- Scripts -->
-    <?php echo $this->headScript()
-        ->prependFile('/js/bootstrap.min.js')
-        ->prependFile('/js/jquery.min.js')
-        ->prependFile('/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
-        ->prependFile('/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9',)) ?>
-
 </head>
 <body>
 <div class="container">
-    <?php echo $this->content; ?>
+    <div class="greeting">
+        <p>
+            <?php if ($this->badRoute) : ?>
+                The requested URL was not found on this server.
+            <?php else : ?>
+                Something went wrong. We will correct this soon, we promise! :)
+            <?php endif; ?>
+        </p>
+
+        <img class="img-responsive" src="/img/404.png">
+
+        <p>
+            Meanwhile visit <a href="/">HOME</a> page.
+        </p>
+    </div>
     <div class="buffer"></div>
 </div>
 <!-- /container -->
@@ -37,6 +45,5 @@
         </div>
     </div>
 </footer>
-<?php echo $this->inlineScript() ?>
 </body>
 </html>

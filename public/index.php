@@ -1,4 +1,20 @@
 <?php
+$env = (getenv('APPLICATION_ENV')) ? getenv('APPLICATION_ENV') : 'production';
+
+define('ROOT_PATH', dirname(__DIR__));
+define('IS_PRODUCTION', ($env == 'production'));
+define('E_FATAL', E_ERROR | E_USER_ERROR | E_PARSE | E_CORE_ERROR | E_COMPILE_ERROR | E_RECOVERABLE_ERROR);
+
+if (!IS_PRODUCTION) {
+    ini_set('error_reporting', E_ALL | E_STRICT);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+} else {
+    ini_set('error_reporting', 0);
+    ini_set('display_errors', 0);
+    ini_set('display_startup_errors', 0);
+}
+
 /**
  * This makes our life easier when dealing with paths. Everything is relative
  * to the application root now.

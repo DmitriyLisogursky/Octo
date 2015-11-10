@@ -16,7 +16,8 @@ return array(
                     'defaults' => array(
                         '__NAMESPACE__' => 'Auth\Controller',
                         'controller' => 'Login',
-                        'action' => 'login'
+                        'action' => 'login',
+                        'cache' => IS_PRODUCTION
                     ),
                 ),
             ),

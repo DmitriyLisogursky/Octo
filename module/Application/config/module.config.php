@@ -20,6 +20,16 @@ return array(
                     ),
                 ),
             ),
+            '404' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/404',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Error',
+                        'action' => 'index',
+                    ),
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -51,10 +61,16 @@ return array(
             ),
         ),
     ),
+    'cache' => array(
+        'adapter' => 'filesystem',
+        'options' => array(
+            'cache_dir' => 'data/cache/fullpagecache'
+        )
+    ),
     'service_manager' => array(
         'factories' => array(
             'Zend\Cache' => 'Zend\Cache\Service\StorageCacheFactory',
-            'CacheListener' => 'Application\Service\Factory\CacheListenerFactory',
+            'CacheListener' => 'Application\Factory\CacheListenerFactory',
         ),
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
@@ -76,7 +92,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Error' => 'Application\Controller\ErrorController'
         ),
     ),
     'view_manager' => array(

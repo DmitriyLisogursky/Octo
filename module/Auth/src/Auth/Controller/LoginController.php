@@ -19,7 +19,10 @@ class LoginController extends CommonController {
     }
 
     public function loginAction() {
+        $viewModel = new ViewModel();
 
-        return new ViewModel();
+        $viewModel->setTerminal(true);
+
+        return $viewModel;
     }
 }

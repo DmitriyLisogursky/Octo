@@ -9,12 +9,28 @@
 
 namespace Application;
 
+use Application\Util\ZendErrorsHandler;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
 class Module {
     
     public function onBootstrap(MvcEvent $e) {
+
+        if (IS_PRODUCTION) {
+            $e->getApplication()->getEventManager()->getSharedManager()->attach(
+                'Zend\Mvc\Controller\AbstractActionController',
+                'dispatch',
+                array(new ZendErrorsHandler(), 'handleControllerCannotDispatchRequest'),
+                1000
+            );
+            $e->getApplication()->getEventManager()->attach(
+                '*',
+                new ZendErrorsHandler(),
+                1001
+            );
+        }
+
         $eventManager = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
