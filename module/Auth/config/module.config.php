@@ -10,13 +10,25 @@ return array(
     'router' => array(
         'routes' => array(
             'login' => array(
-                'type' => 'Literal',
+                'type' => 'Segment',
                 'options' => array(
-                    'route' => '/login',
+                    'route' => '/login[/]',
                     'defaults' => array(
                         '__NAMESPACE__' => 'Auth\Controller',
                         'controller' => 'Login',
                         'action' => 'login',
+                        'cache' => IS_PRODUCTION
+                    ),
+                ),
+            ),
+            'register' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/register[/]',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Auth\Controller',
+                        'controller' => 'Register',
+                        'action' => 'register',
                         'cache' => IS_PRODUCTION
                     ),
                 ),
@@ -47,6 +59,8 @@ return array(
         'factories' => array(
             'Auth\Controller\Login' => 'Auth\Factory\LoginControllerFactory',
             'Auth\Controller\LoginRest' => 'Auth\Factory\LoginRestControllerFactory',
+            'Auth\Controller\Register' => 'Auth\Factory\RegisterControllerFactory',
+            'Auth\Controller\RegisterRest' => 'Auth\Factory\RegisterRestControllerFactory',
         ),
     ),
     'view_manager' => array(

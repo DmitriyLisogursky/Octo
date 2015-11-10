@@ -1,5 +1,3 @@
-@CHARSET "UTF-8";
-
 .progress-bar {
     color: #333;
 }
@@ -18,8 +16,36 @@
     padding: 10px;
 }
 
-.login-form {
-    margin-top: 45%;
+@media (max-width: 767px) {
+
+    .login-form {
+        margin-top: 35%;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .login-form {
+        margin-top: 25%;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .login-form {
+        margin-top: 45%;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .login-form {
+        margin-top: 45%;
+    }
+
 }
 
 form[role=login] {
